@@ -1,4 +1,5 @@
-# Routers.py BEGIN
+
+# Handlers.py BEGIN
 #
 #
 #
@@ -15,64 +16,39 @@ if __name__ == "__main__":
 #
 #
 ###########################################################################
-# + Importing Controllers.py BEGIN
+# + Importing Routers.py BEGIN
 ###########################################################################
-from Controllers import *
+from Routers import *
 ###########################################################################
-# - Importing Controllers.py END
-###########################################################################
-#
-#
-#
-###########################################################################
-# + Route Login BEGIN
-###########################################################################
-@app.route("/login",methods=["GET","POST"])
-def loginRoute():	
-  return loginController(request)
-###########################################################################
-# - Route Login END
+# - Importing Routers.py END
 ###########################################################################
 #
 #
 #
 ###########################################################################
-# + Route Logout BEGIN
+# + App Before Request BEGIN
 ###########################################################################
-@app.route("/logout",methods=["POST"])
-def logoutRoute():	
-  return logoutController(request)
+@app.before_request
+def before_request():
+  g.user = None
+  if "user" in session:
+    g.user = session["user"]
 ###########################################################################
-# - Route Logout END
-###########################################################################
-#
-#
-#
-###########################################################################
-# + Route Panel BEGIN
-###########################################################################
-@app.route("/panel",methods=["GET"])
-def panelRoute():	
-  return panelController(request)
-###########################################################################
-# - Route Panel END
+# - App Before Request END
 ###########################################################################
 #
 #
 #
 ###########################################################################
-# + Route Home BEGIN
+# + App 404 Handler BEGIN
 ###########################################################################
-@app.route("/",methods=["GET"])
-def homeRoute():	
-  return redirectRoute("login")
+@app.errorhandler(404)
+def page_not_found(e):
+    print("404 Handler => "+request.url)
+    return redirectRoute("home")
 ###########################################################################
-# - Route Home END
+# - App 404 Handler END
 ###########################################################################
 #
 #
-#
-
-#
-#
-# Routers.py END
+# Handlers.py END
