@@ -144,6 +144,18 @@ def panelRoute():
 #
 #
 ###########################################################################
+# + Route Home BEGIN
+###########################################################################
+@app.route("/",methods=["GET"])
+def homeRoute():	
+  return redirectRoute("login")
+###########################################################################
+# - Route Home END
+###########################################################################
+#
+#
+#
+###########################################################################
 # + App Before Request BEGIN
 ###########################################################################
 @app.before_request
@@ -153,31 +165,9 @@ def before_request():
   g.user = None
   if "user" in session:
     g.user = session["user"]
-
 ###########################################################################
 # - App Before Request END
 ###########################################################################
-
-
-
-@app.route("/",methods=["GET"])
-def homeRoute():	
-  return redirectRoute("login")
-
-
-
-
-
-# @app.teardown_appcontext
-# def close_database_connection(exception):
-#   db_helper = getattr(g,"db_helper",None)
-#   if db_helper is not None:
-#     db_helper.close()
-
-
-
-
-
 #
 #
 # Controllers.py END
