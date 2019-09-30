@@ -17,6 +17,10 @@ from Handlers import *
 ###########################################################################
 if __name__ == "__main__":
     app.run(host=WEB_CLIENT_HOST,port=WEB_CLIENT_PORT,debug=debugMode)
+else:
+    iprint('Not import this file, run this command: "python main.py"')
+    uprint("Exiting...")
+    exit()
 ###########################################################################
 # - App Start END
 ###########################################################################

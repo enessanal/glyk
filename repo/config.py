@@ -5,6 +5,7 @@
 ###########################################################################
 # + Controlling "__name__" Variable BEGIN
 ###########################################################################
+# same as control_name_variable(__name__) method    
 if __name__ == "__main__":
     print("Exiting...\nRun this command => \"python main.py\"")
     exit()
@@ -116,7 +117,13 @@ def uprint(message):
 
 
 def redirectRoute(route):
-  return redirect(url_for(route+"Route"))
+    return redirect(url_for(route+"Route"))
+
+def control_name_variable(name):
+    if name == "__main__":
+        uprint("Exiting...")
+        iprint("Run this command => \"python main.py\"")
+        exit()
 ###########################################################################
 # - Helper Functions END
 ###########################################################################
