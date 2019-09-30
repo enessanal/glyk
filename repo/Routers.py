@@ -93,7 +93,7 @@ def before_request():
 ###########################################################################
 @app.errorhandler(404)
 def page_not_found(e):
-    print("=> "+request.url)
+    print("404 Handler => "+request.url)
     return redirectRoute("home")
 ###########################################################################
 # - App 404 Handler END
