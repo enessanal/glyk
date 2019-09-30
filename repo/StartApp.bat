@@ -1,0 +1,1 @@
+nodemon --watch *.py --watch static/index.html --exec "python" ./main.py
