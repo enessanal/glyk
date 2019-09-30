@@ -6,7 +6,7 @@
 # + Controlling "__name__" Variable BEGIN
 ###########################################################################
 if __name__ == "__main__":
-    print("Exiting...\nRun this command => \"python3 main.py\"")
+    print("Exiting...\nRun this command => \"python main.py\"")
     exit()
 ###########################################################################
 # - Controlling "__name__" Variable END
