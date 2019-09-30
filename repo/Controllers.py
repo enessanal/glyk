@@ -159,9 +159,10 @@ def before_request():
 ###########################################################################
 
 
+
 @app.route("/",methods=["GET"])
 def homeRoute():	
-  return redirect(url_for("loginRoute"))
+  return redirectRoute("login")
 
 
 
