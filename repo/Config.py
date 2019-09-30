@@ -3,6 +3,16 @@
 #
 #
 ###########################################################################
+# + python2 print function Compability BEGIN
+###########################################################################
+from __future__ import print_function
+###########################################################################
+# - python2 print function Compability END
+###########################################################################
+#
+#
+#
+###########################################################################
 # + Controlling "__name__" Variable BEGIN
 ###########################################################################
 # same as control_name_variable(__name__) method    
@@ -48,7 +58,6 @@ moduleNames.append("os.path")
 moduleNames.append("time")
 moduleNames.append("datetime")
 moduleNames.append("uuid")
-
 try:
     import importlib
     for moduleName in moduleNames:
