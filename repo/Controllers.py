@@ -33,16 +33,16 @@ def loginController(request):
 
   if(request.method=="GET"):
     if g.user:
-      return redirect(url_for("panelRoute"))
+      return redirectRoute("panel")
     return render_template("login.html",parameters=parameters)
 
   elif(request.method=="POST"):
     if g.user:
-      return redirect(url_for("panelRoute"))
+      return redirectRoute("panel")
     else:
       if(request.form["username"]=="admin" and request.form["password"]=="123"):
         session["user"] = request.form["username"]
-        return redirect(url_for("panelRoute"))
+        return redirectRoute("panel")
       else:
         parameters["errors"]="error"
         return render_template("login.html",parameters=parameters)
@@ -66,7 +66,7 @@ def logoutController(request):
   if(request.method=="POST"):
     if g.user:
       session.pop("user",None)
-    return redirect(url_for("loginRoute"))
+    return redirectRoute("login")
 
 
   else:

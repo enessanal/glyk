@@ -113,6 +113,10 @@ def iprint(message):
 
 def uprint(message):
     print("[-] "+str(message))
+
+
+def redirectRoute(route):
+  return redirect(url_for(route+"Route"))
 ###########################################################################
 # - Helper Functions END
 ###########################################################################
