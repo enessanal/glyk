@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>  
+    {% include 'head.html' %}
+    <body>
+        <h1>LOGIN</h1>
+        <form method="POST">
+            <input type="text" name="username" autocomplete="off">
+            <input type="password" name="password" autocomplete="off">
+            <input type="submit" value="login">
+            {% if parameters["errors"] %}
+            <h5 style="color:brown">Error</h5>
+            {% endif %}
+        </form>
+    </body>
+</html>
