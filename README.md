@@ -1,6 +1,5 @@
-# GLYK
-GLYK Project
-## Notes
+# GLYK Project
+### Notes
 
 ```
 pip3 install -r requirements.txt
