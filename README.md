@@ -1,2 +1,2 @@
-# glyk
-Glyk Project
+# GLYK
+GLYK Project
